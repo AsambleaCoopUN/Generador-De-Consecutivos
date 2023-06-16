@@ -2,9 +2,9 @@ import app from './app';
 import { Server as websocketserver } from 'socket.io';
 import http from 'http';
 import sockets from './sockets';
-import { PORT } from './config';
+import { PORT } from './config'; // se recibe el puerto para l servidor 
 
-import  {pool} from './db'
+import { pool } from './db';// se llama a la conexion en la base de datos 
 
 const server = http.createServer(app);
 const httpServer = server.listen(PORT);

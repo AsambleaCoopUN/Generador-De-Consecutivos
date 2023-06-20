@@ -13,6 +13,7 @@ const pool = new Pool({
   database: conectionData.database
 });
 
+//console.log(conectionData);
   pool.connect((err, client, release) => {   
     if (err) {
       return console.error('Error adquiriendo el cliente', err.stack)

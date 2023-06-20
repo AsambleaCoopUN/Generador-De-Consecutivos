@@ -11,6 +11,6 @@ const httpServer = server.listen(PORT);
 console.log("server corriendo en puerto" , PORT);
 
 const io = new websocketserver(httpServer);
-//sockets(io);
+sockets(io);
 
 console.log('server listen');

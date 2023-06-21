@@ -14,12 +14,23 @@ const pool = new Pool({
 });
 
 //console.log(conectionData);
-  pool.connect((err, client, release) => {   
-    if (err) {
-      return console.error('Error adquiriendo el cliente', err.stack)
-    }
-    console.log('Conexión exitosa a la base de datos')
-  });
- 
+pool.connect((err, client, release) => {   
+  if (err) {
+    return console.error('Error adquiriendo el cliente', err.stack)
+  }
+  console.log('Conexión exitosa a la base de datos')
+});
+
+const test = async () => {
+  try {
+    const res = await pool.query('select * from c9onsecutivo.usuario');
+    console.log(res.rows);
+    pool.end();
+  } catch (error) {
+    console.log(error);
+  };
+};
+
+test();
 
 module.exports = pool;

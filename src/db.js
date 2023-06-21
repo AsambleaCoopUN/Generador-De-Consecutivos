@@ -23,7 +23,7 @@ pool.connect((err, client, release) => {
 
 const test = async () => {
   try {
-    const res = await pool.query('select * from c9onsecutivo.usuario');
+    const res = await pool.query('select * from consecutivo.usuario');
     console.log(res.rows);
     pool.end();
   } catch (error) {
@@ -31,6 +31,6 @@ const test = async () => {
   };
 };
 
-test();
+/* test(); */
 
 module.exports = pool;

@@ -1,3 +1,6 @@
+
+@import url('https://fonts.cdnfonts.com/css/coolvetica');
+
 /*Hoja de estilos generales de la aplicacion para generar cosecutivos*/
 * {
   padding: 0;
@@ -18,7 +21,7 @@ body{
 /*Barra de navegación*/
 .navbar {
   padding: 0.3rem;
-  background-color: #a6bdd4;
+  background-color: #009FE3;
 }
 
 .navbar-collapse {
@@ -36,6 +39,7 @@ body{
   font-size: 1rem;
   display: grid;
   align-content: center;
+  background-color: #D7E1F2;
 }
 
 .footer {

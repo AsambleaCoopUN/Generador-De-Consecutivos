@@ -23,11 +23,11 @@
     <link rel="icon" type="image/x-icon" href="./images/favicon_cpun.png">
   </head>
 
-  <body>
+  <body class="container">
     <header>
       <!-- Barra de navegación -->
       <nav class="navbar navbar-expand-md bg-body-tertiary">
-        <div class="container-fluid">
+        <div>
           <!-- Botón dispositivos móviles -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
           <div class="collapse navbar-collapse" id="navbarToggler">
             <a class="navbar-brand">
               <figure>
-                <img src="./images/logo_cpun.png" width="250" alt="Logo de la página web">
+                <img src="./images/logo_cpun_03.png" width="250" alt="Logo de la página web">
               </figure>
             </a>
           </div>
@@ -44,7 +44,7 @@
       </nav>
     </header>
 
-    <main class="main">
+    <main>
       <section class="main-section_cabecera">   
         <div id="cabecera" class="d-flex flex-column justify-content-center align-items-center" >
           <div class="row col-lg-12">
@@ -55,16 +55,16 @@
       
       <section class="main-section_form">
         <form action="#" method="post">
-          <div class="main-section_form_inpbox mb-4 col-mb-12" >
+          <div class="main-section_form_inpbox" >
             <label for="nombre" class="form-label">
               <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="nombre" placeholder="Nombre" maxlength="10" required>
             </label>
             <label for="prefijo" class="form-label">
-              <input type="text" class="form-control" id="prefijo" name="prefijo" aria-describedby="prefijo" placeholder="Cédula" maxlength="10" required>
+              <input type="text" class="form-control" id="prefijo" name="prefijo" aria-describedby="prefijo" placeholder="Prefijo" maxlength="10" required>
             </label>
           </div>
-          <div class="mb-4 col-mb-12 main-section_form_button">
-            <button type="submit" class="btn btn-primary btnconsultar" tabindex="5">Generar</button>
+          <div class="content main-section_form_button">
+            <button type="submit" class="btn btnconsultar" tabindex="5">Generar</button>
           </div>
         </form>
       </section>

@@ -14,6 +14,11 @@ h1{
   text-align: center;
 }
 
+.main-section{
+  position: relative;
+  padding: 2rem;
+}
+
 .main-section_form{
   width: 50rem;
   height: 30rem;
@@ -34,7 +39,7 @@ h1{
 
 .form-control{
   font-size: medium;
-  position: relative;
+  /* position: relative; */
 }
 
 .main-section_form_button{

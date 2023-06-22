@@ -1,5 +1,5 @@
 
-@import url('https://fonts.cdnfonts.com/css/coolvetica');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
 
 /*Hoja de estilos generales de la aplicacion para generar cosecutivos*/
 * {
@@ -14,7 +14,7 @@ html {
 
 body{
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Cabin', sans-serif;
 }
 
 
@@ -39,7 +39,6 @@ body{
   font-size: 1rem;
   display: grid;
   align-content: center;
-  background-color: #D7E1F2;
 }
 
 .footer {

@@ -39,7 +39,7 @@ h1{
 
 .form-control{
   font-size: medium;
-  /* position: relative; */
+  position: relative;
 }
 
 .main-section_form_button{
@@ -48,18 +48,19 @@ h1{
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
 }
 
 .btnconsultar{
   padding: 2rem 2rem;
   font-size: large;
   font-family: 'Cabin', sans-serif;
+  border: 2px solid #000000;
   background: #D7E1F2;
   transition: all 0.5s ease;
 }
 
 .btnconsultar:hover{
+  border: 2px solid #000000;
   background: #009FE3;
   color: #ffff !important;
 }

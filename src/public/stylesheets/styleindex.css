@@ -23,7 +23,9 @@ h1{
   width: 50rem;
   height: 30rem;
   padding: 1.5rem;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
+  border-radius: 2rem;
+  box-shadow: 10px -10px 3px rgba(8,34,86,0.5) inset;
   margin: 0 auto;
   margin-top: 2rem;
   position: relative;
@@ -54,13 +56,12 @@ h1{
   padding: 2rem 2rem;
   font-size: large;
   font-family: 'Cabin', sans-serif;
-  border: 2px solid #000000;
-  background: #D7E1F2;
+  border-radius: 2rem;
+  background-color: rgba(215,225,242,0.8);
   transition: all 0.5s ease;
 }
 
 .btnconsultar:hover{
-  border: 2px solid #000000;
-  background: #009FE3;
+  background-color: rgba(0,159,227,1);
   color: #ffff !important;
 }

@@ -1,0 +1,22 @@
+@font-face {
+  font-family: FuenteLocal;
+  src: local('FuenteLocal'), url('../fonts/coolvetica\ rg.otf') format('truetype');
+}
+
+.main-section{
+  margin: 2rem;
+  /* padding: 2rem; */
+  align-content: center;
+}
+
+.main-section_table {
+  margin: 2rem 2rem 2rem 2rem;
+  padding-top: 2rem;
+  font-size: small;
+}
+
+.main-section_table th{
+  font-size: 25px;
+  font-family: 'FuenteLocal', sans-serif;
+  text-align: center
+}

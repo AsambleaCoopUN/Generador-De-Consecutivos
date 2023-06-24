@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Desarrolladores: Andres Cardenas y Jeisson Velosa, Base de datos: Miguel Castañeda">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generador de Consecutivos">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <!--Bootstrap-->
+    <link rel="stylesheet" type="text/css" href="./dist/css/bootstrap.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="./dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/styles.css" >
+    <link rel="stylesheet" href="../stylesheets/styleindex.css" >
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <!--Titulo-->
+    <title>Generador de Consecutivos Cooprofesores UN</title> 
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="../images/favicon_cpun.png">
+  </head>
+
+  <body class="container">
+    <header>
+      <!-- Barra de navegación -->
+      <nav class="navbar navbar-expand-md">
+        <div>
+          <!-- Botón dispositivos móviles -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Logotipo y enlaces de navegación -->
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <a class="navbar-brand">
+              <figure>
+                <img src="../images/logo_cpun_02.png" width="250" alt="Logo de la página web">
+              </figure>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="main-section_cabecera">   
+        <div id="cabecera" class="d-flex flex-column justify-content-center align-items-center" >
+          <div class="row col-lg-12">
+            <h1>Generador de Consecutivos</h1>
+          </div>
+        </div>
+      </section>
+      
+      <section class="main-section">
+        <form class="main-section_form" action="#" method="post">
+          <div class="main-section_form_inpbox" >
+            <label for="nombre" class="form-label">
+              <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="nombre" placeholder="Nombre" maxlength="10" required>
+            </label>
+            <label for="prefijo" class="form-label">
+              <input type="text" class="form-control" id="prefijo" name="prefijo" aria-describedby="prefijo" placeholder="Prefijo" maxlength="10" required>
+            </label>
+          </div>
+          <div class="content main-section_form_button">
+            <button type="submit" class="btn btnconsultar" tabindex="5">Generar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+
+  <!-- javascripts-->
+  <script src="/JS/jquery-3.6.3.min.js"></script>
+  <script src="/dist/js/bootstrap.min.js"></script>
+  <script src="/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./main.js"></script>
+
+</html>

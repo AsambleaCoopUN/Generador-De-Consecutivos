@@ -10,13 +10,13 @@
 }
 
 .main-section_table {
-  margin: 2rem 2rem 2rem 2rem;
+  margin: 2rem;
   padding-top: 2rem;
   font-size: small;
 }
 
 .main-section_table th{
-  font-size: 25px;
+  font-size: 20px;
   font-family: 'FuenteLocal', sans-serif;
   text-align: center
 }

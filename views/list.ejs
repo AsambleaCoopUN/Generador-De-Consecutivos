@@ -55,11 +55,13 @@
               </tr>
             </thead>
             <tbody>
+              <% result.forEach((row) => { %>
               <tr>
-                <td>Prueba-GG</td>
-                <td>Prueba-Consecutivo</td>
-                <td>Prueba-Fecha</td>
+                <td><%= row.usuario_id %></td>
+                <td><%= row.usuario_nombre %></td>
+                <td><%= row.usuario_activo%></td>
               </tr>
+              <% }); %>
             </tbody>
           </table>
       </section>

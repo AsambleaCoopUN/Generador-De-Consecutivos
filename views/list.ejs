@@ -49,17 +49,17 @@
           <table class="main-section_table table table-hover table-bordered table-striped table-center mt-4">
             <thead>
               <tr>
-                <th scope="col">Dependencia</th>
                 <th scope="col">Consecutivo</th>
+                <th scope="col">Descripción</th>
                 <th scope="col">Fecha</th>
               </tr>
             </thead>
             <tbody>
               <% result.forEach((row) => { %>
               <tr>
-                <td><%= row.usuario_id %></td>
-                <td><%= row.usuario_nombre %></td>
-                <td><%= row.usuario_activo%></td>
+                <td><%= row.consecutivo %></td>
+                <td><%= row.descripcion %></td>
+                <td><%= row.fecha_generacion%></td>
               </tr>
               <% }); %>
             </tbody>

@@ -11,7 +11,7 @@ router.get('/', (req,res)=> {
     console.log('Conexión exitosa a la base de datos')
   });
   
-  pool.query('select * from consecutivo.usuario',(error, result)=>{
+  pool.query('select * from consecutivo.historia_consecutivo',(error, result)=>{
     try {
       res.render('list', {result:result.rows});
     } catch (error) {

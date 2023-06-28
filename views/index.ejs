@@ -54,17 +54,24 @@
       </section>
       
       <section class="main-section">
-        <form class="main-section_form" action="/list" method="post">
+        <form class="main-section_form">
           <div class="main-section_form_inpbox" >
             <label for="nombre" class="form-label">
               <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="nombre" placeholder="Nombre" maxlength="10" required>
             </label>
+          </div>
+          <div class="main-section_form_inpbox" >
             <label for="prefijo" class="form-label">
               <input type="text" class="form-control" id="prefijo" name="prefijo" aria-describedby="prefijo" placeholder="Prefijo" maxlength="10" required>
             </label>
           </div>
+          <div class="main-section_form_text">
+            <label for="concepto" class="form-label">
+              <textarea type="" class="form-control" id="concepto" name="concepto" aria-describedby="concepto" placeholder="Concepto" maxlength="30" rows="3" required></textarea>
+            </label>
+          </div>
           <div class="content main-section_form_button">
-            <button type="submit" class="btn btnconsultar" tabindex="5">Generar</button>
+            <a type="button" class="btn btnconsultar" href="./list" tabindex="5">Generar</a>
           </div>
         </form>
       </section>

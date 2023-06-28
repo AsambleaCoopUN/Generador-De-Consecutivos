@@ -16,11 +16,8 @@ app.use(express.json());
 /* EJS como motor de plantillas*/
 app.set('view engine','ejs');
 
-/* llamado del servicio inicial*/
-app.get('/', (req,res)=> {
-  res.render('index');
-});
 
+/* llamado del enrrutador */
 routerApp(app);
 
 export default app;

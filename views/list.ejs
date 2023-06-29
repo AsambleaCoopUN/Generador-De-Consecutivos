@@ -13,10 +13,6 @@
     <link rel="stylesheet" type="text/css" href="./dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../stylesheets/styles.css" >
     <link rel="stylesheet" href="../stylesheets/stylelist.css" >
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
     <!--Titulo-->
     <title>Listado consecutivos</title> 
     <!--Favicon-->
@@ -49,17 +45,19 @@
           <table class="main-section_table table table-hover table-bordered table-striped table-center mt-4">
             <thead>
               <tr>
-                <th scope="col">Dependencia</th>
                 <th scope="col">Consecutivo</th>
+                <th scope="col">Descripción</th>
                 <th scope="col">Fecha</th>
               </tr>
             </thead>
             <tbody>
+              <% result.forEach((row) => { %>
               <tr>
-                <td>Prueba-GG</td>
-                <td>Prueba-Consecutivo</td>
-                <td>Prueba-Fecha</td>
+                <td><%= row.consecutivo %></td>
+                <td><%= row.descripcion %></td>
+                <td><%= row.fecha_generacion%></td>
               </tr>
+              <% }); %>
             </tbody>
           </table>
       </section>

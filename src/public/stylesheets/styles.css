@@ -1,5 +1,8 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
+@font-face {
+  font-family: FuenteLocal;
+  src: local('FuenteLocal'), url('../fonts/coolvetica\ rg.otf') format('truetype');
+}
 
 /*Hoja de estilos generales de la aplicacion para generar cosecutivos*/
 * {
@@ -16,7 +19,6 @@ body{
   margin: 0;
   font-family: 'Cabin', sans-serif;
 }
-
 
 /*Barra de navegación*/
 .navbar {
@@ -41,6 +43,12 @@ body{
   font-size: 1rem;
   display: grid;
   align-content: center;
+}
+
+h1{
+  padding: 2rem;
+  font-size: 5rem;
+  font-family: 'FuenteLocal', sans-serif;
 }
 
 .footer {

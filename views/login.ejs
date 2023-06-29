@@ -12,9 +12,9 @@
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="./dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../stylesheets/styles.css" >
-    <link rel="stylesheet" href="../stylesheets/stylelist.css" >
+    <link rel="stylesheet" href="../stylesheets/stylelogin.css" >
     <!--Titulo-->
-    <title>Listado consecutivos</title> 
+    <title>Login</title> 
     <!--Favicon-->
     <link rel="icon" type="image/x-icon" href="../images/favicon_cpun.png">
   </head>
@@ -40,26 +40,27 @@
       </nav>
     </header>
 
-    <main clas="main">
+    <main class="main">
+      <section class="main-section_cabecera">   
+        <div id="cabecera" class="d-flex flex-column justify-content-center align-items-center" >
+          <div class="row col-lg-12">
+            <h1>Generador de Consecutivos</h1>
+          </div>
+        </div>
+      </section>    
+        
+      <!-- Formulario -->
       <section class="main-section">
-          <table class="main-section_table table table-hover table-bordered table-striped table-center mt-4">
-            <thead>
-              <tr>
-                <th scope="col">Consecutivo</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Fecha</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% result.forEach((row) => { %>
-              <tr>
-                <td><%= row.consecutivo %></td>
-                <td><%= row.descripcion %></td>
-                <td><%= row.fecha_generacion%></td>
-              </tr>
-              <% }); %>
-            </tbody>
-          </table>
+        <form class="main-section_form" action="#" method="post">
+          <div class="main-section_form_inpbox" >
+            <label for="cedula" class="form-label">
+              <input type="text" class="form-control" id="cedula" name="cedula" aria-describedby="cedula" placeholder="Cédula" maxlength="10" required>
+            </label>
+          </div>
+          <div class="mb-4 col-mb-12 main-section_form_button">
+            <a type="button" class="btn btnlogin" href="#" tabindex="5">Ingresar</a>
+          </div>
+        </form>
       </section>
     </main>
   </body>
@@ -70,4 +71,5 @@
   <script src="/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="./main.js"></script>
+
 </html>

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
 
+.main-section_cabecera{
+  text-align: center;
+}
+
 .main-section{
   position: relative;
   padding: 2rem;
@@ -7,7 +11,7 @@
 
 .main-section_form{
   width: 50rem;
-  height: 30rem;
+  height: 25rem;
   padding: 1.5rem;
   border: 1px solid #000000;
   border-radius: 2rem;
@@ -15,14 +19,20 @@
   margin: 0 auto;
   margin-top: 2rem;
   display: flex;
+  
 }
 
 .main-section_form_inpbox{
   padding: 2rem;
 }
 
-.form-control{
+.form-label{
   font-size: medium;
+}
+
+.form-control{
+  margin-top: 1rem;
+  font-size: small;
 }
 
 .form-control:hover{
@@ -33,7 +43,7 @@
 .main-section_form_button{
   padding-top: 2rem;
   position: absolute;
-  top: 70%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

@@ -38,6 +38,7 @@ h1{
 
 .form-control{
   font-size: medium;
+  resize: none;
 }
 
 .form-control:hover{

@@ -9,7 +9,15 @@ export const conectionData2 = {
   host: process.env.hostC,
   port: process.env.portC,
   database: process.env.databaseC
-}
+};
+
+export const adConectConfig = {
+  url: process.env.url,
+  baseDN: process.env.baseDN,
+  username: process.env.username,
+  password: process.env.password,
+};
+
 
 export const PORT = process.env.PORT || 3000;
 

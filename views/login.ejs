@@ -12,13 +12,9 @@
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="./dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../stylesheets/styles.css" >
-    <link rel="stylesheet" href="../stylesheets/styleindex.css" >
-    <!-- Fonts -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../stylesheets/stylelogin.css" >
     <!--Titulo-->
-    <title>Generador de Consecutivos Cooprofesores UN</title> 
+    <title>Login</title> 
     <!--Favicon-->
     <link rel="icon" type="image/x-icon" href="../images/favicon_cpun.png">
   </head>
@@ -51,27 +47,23 @@
             <h1>Generador de Consecutivos</h1>
           </div>
         </div>
-      </section>
-      
+      </section>    
+        
+      <!-- Formulario -->
       <section class="main-section">
         <form class="main-section_form">
           <div class="main-section_form_inpbox" >
-            <label for="nombre" class="form-label">
-              <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="nombre" placeholder="Nombre" maxlength="10" required>
+            <label for="user" class="form-label">Usuario
+              <input type="text" class="form-control" id="user" name="user" aria-describedby="user" placeholder="Usuario" maxlength="10" required>
             </label>
           </div>
           <div class="main-section_form_inpbox" >
-            <label for="prefijo" class="form-label">
-              <input type="text" class="form-control" id="prefijo" name="prefijo" aria-describedby="prefijo" placeholder="Prefijo" maxlength="10" required>
+            <label for="pass" class="form-label">Contraseña:
+              <input type="password" class="form-control" id="pass" name="pass" aria-describedby="pass" placeholder="Contraseña" maxlength="20" required>
             </label>
           </div>
-          <div class="main-section_form_text">
-            <label for="concepto" class="form-label">
-              <textarea type="" class="form-control" id="concepto" name="concepto" aria-describedby="concepto" placeholder="Concepto" maxlength="50" rows="3" required></textarea>
-            </label>
-          </div>
-          <div class="content main-section_form_button">
-            <a type="button" class="btn btnconsultar" href="./list" tabindex="5">Generar</a>
+          <div class="mb-4 col-mb-12 main-section_form_button">
+            <a type="button" class="btn btnlogin" href="/" tabindex="5">Ingresar</a>
           </div>
         </form>
       </section>

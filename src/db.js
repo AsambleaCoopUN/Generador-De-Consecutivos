@@ -13,24 +13,4 @@ const pool = new Pool({
   database: conectionData.database
 });
 
-//console.log(conectionData);
-pool.connect((err, client, release) => {   
-  if (err) {
-    return console.error('Error adquiriendo el cliente', err.stack)
-  }
-  console.log('Conexión exitosa a la base de datos')
-});
-
-const test = async () => {
-  try {
-    const res = await pool.query('select * from consecutivo.usuario');
-    console.log(res.rows);
-    pool.end();
-  } catch (error) {
-    console.log(error);
-  };
-};
-
-/* test(); */
-
 module.exports = pool;

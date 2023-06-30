@@ -11,7 +11,7 @@
 
 .main-section_form{
   width: 50rem;
-  height: 30rem;
+  height: 25rem;
   padding: 1.5rem;
   border: 1px solid #000000;
   border-radius: 2rem;
@@ -19,16 +19,20 @@
   margin: 0 auto;
   margin-top: 2rem;
   display: flex;
-  justify-content: flex-start;
+  
 }
 
 .main-section_form_inpbox{
   padding: 2rem;
 }
 
-.form-control{
+.form-label{
   font-size: medium;
-  resize: none;
+}
+
+.form-control{
+  margin-top: 1rem;
+  font-size: small;
 }
 
 .form-control:hover{
@@ -36,22 +40,15 @@
   
 }
 
-.main-section_form_text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .main-section_form_button{
   padding-top: 2rem;
   position: absolute;
-  top: 70%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.btnconsultar{
+.btnlogin{
   padding: 2rem 2rem;
   font-size: large;
   font-family: 'Cabin', sans-serif;
@@ -60,7 +57,7 @@
   transition: all 0.5s ease;
 }
 
-.btnconsultar:hover{
+.btnlogin:hover{
   background-color: rgba(0,159,227,1);
   color: #ffff !important;
   box-shadow: 5px 5px rgba(215,225,242,0.8);

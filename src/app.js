@@ -1,6 +1,6 @@
 import express from 'express';
 import path from 'path';
-
+const routerApp = require('../routes/router');
 const app = express();
 
 /* establecer las carpetas estáticas */
@@ -16,7 +16,8 @@ app.use(express.json());
 /* EJS como motor de plantillas*/
 app.set('view engine','ejs');
 
-/* llamado del enrutador */
-app.use('/', require('./router'));
+
+/* llamado del enrrutador */
+routerApp(app);
 
 export default app;

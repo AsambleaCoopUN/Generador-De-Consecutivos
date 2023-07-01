@@ -15,7 +15,7 @@
   padding: 1.5rem;
   border: 1px solid #000000;
   border-radius: 2rem;
-  box-shadow: 10px -10px 3px rgba(8,34,86,0.5) inset;
+  box-shadow: -10px 10px 3px rgba(8,34,86,0.5);
   margin: 0 auto;
   margin-top: 2rem;
   display: flex;

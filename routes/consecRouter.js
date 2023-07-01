@@ -3,7 +3,6 @@ const router = express.Router();
 const pool = require('../src/db');
 
 router.get('/', (req,res)=> {
-  //console.log(conectionData);
   pool.connect((err, client, release) => {
     if (err) {
       return console.error('Error adquiriendo el cliente', err.stack)

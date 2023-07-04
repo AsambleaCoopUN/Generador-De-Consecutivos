@@ -2,17 +2,17 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../src/db');
 
-let cedula;
+let userldap;
 let idUser;
 let message;
 let history;
 
 router.post('/', (req, res)=>{
-  cedula = req.body.user;
+  userldap = req.body.userldap;
 
   const user = `select u.usuario_nombre, u.usuario_id 
   from consecutivo.usuario u
-  where u.usuario_identificacion  = '${cedula}'`;
+  where u.usuario_ldap  = '${userldap}'`;
 
   pool.connect((err, client, release) => {
     if (err) {

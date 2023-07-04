@@ -12,10 +12,10 @@ export const conectionData2 = {
 };
 
 export const adConectConfig = {
-  url: process.env.url,
-  baseDN: process.env.baseDN,
-  username: process.env.username,
-  password: process.env.password,
+  url: process.env.urlC,
+  baseDN: process.env.baseDNC,
+  username: process.env.usernameC,
+  password: process.env.passwordC,
 };
 
 

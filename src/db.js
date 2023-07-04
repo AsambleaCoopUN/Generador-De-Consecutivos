@@ -10,7 +10,7 @@ const pool = new Pool({
   host: conectionData.host,
   port: conectionData.port,
   database: conectionData.database,
-  max: 4,
+  max: 10,
 });
 
 module.exports = pool;

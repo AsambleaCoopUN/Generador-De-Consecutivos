@@ -24,7 +24,7 @@ router.post('/', (req, res)=>{
   pool.query(user,(error1, resultUser)=>{   
     if (!error1){
       idUser = resultUser.rows[0].usuario_id;
-      history = `select u.usuario_nombre, p.prefijo, hc.consecutivo, hc.descripcion, 
+      history = `select p.prefijo, hc.consecutivo, hc.descripcion, 
       cast (hc.fecha_generacion as VARCHAR(16))
       as fecha 
       from consecutivo.usuario u,consecutivo.prefijo p,consecutivo.historia_consecutivo hc

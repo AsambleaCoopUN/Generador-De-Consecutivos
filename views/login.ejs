@@ -51,9 +51,9 @@
         
       <!-- Formulario -->
       <section class="main-section">
-        <form class="main-section_form">
+        <form class="main-section_form" action="/users" method="post">
           <div class="main-section_form_inpbox" >
-            <label for="user" class="form-label">Usuario
+            <label for="user" class="form-label">Cedula
               <input type="text" class="form-control" id="user" name="user" aria-describedby="user" placeholder="Usuario" maxlength="10" required>
             </label>
           </div>
@@ -63,7 +63,7 @@
             </label>
           </div>
           <div class="mb-4 col-mb-12 main-section_form_button">
-            <a type="button" class="btn btnlogin" href="/" tabindex="5">Ingresar</a>
+            <button type="submit" class="btn btnlogin" tabindex="5">Ingresar</button>
           </div>
         </form>
       </section>

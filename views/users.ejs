@@ -12,9 +12,9 @@
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="./dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../stylesheets/styles.css" >
-    <link rel="stylesheet" href="../stylesheets/styleindex.css" >
+    <link rel="stylesheet" href="../stylesheets/styleinusers.css" >
     <!--Titulo-->
-    <title>Generador de Consecutivos Cooprofesores UN</title> 
+    <title>Usuarios</title> 
     <!--Favicon-->
     <link rel="icon" type="image/x-icon" href="../images/favicon_cpun.png">
   </head>
@@ -41,46 +41,42 @@
     </header>
 
     <main class="main">
-      <section class="main-section_cabecera">   
-        <div id="cabecera" class="d-flex flex-column justify-content-center align-items-center" >
-          <div class="row col-lg-12">
-            <h1>Generar Consecutivo</h1>
-          </div>
-        </div>
-      </section>
-      
       <section class="main-section">
-        <form class="main-section_form" action="#" method="post">
-            <label class="form_lable" for="prefijo" class="form-label">
-              <select class="form_lable_select" name="prefijo" id="prefijo">
-                <option value="GG">Gerencia / Subgerencia</option>
-                <option value="DA">Direccion Administrativa</option>
-                <option value="DC">Direccion Comercial</option>
-                <option value="DF">Direccion Financiera</option>
-                <option value="DT">Direccion Tics</option>
-                <option value="CI">Direccion Control Interno</option>
-                <option value="CR">Coordinacion Riesgos</option>
-                <option value="JR">Juridica</option>
-              </select>
-            </label>
-          <div class="main-section_form_text">
-            <label for="concepto" class="form-label">
-              <textarea type="" class="form-control" id="concepto" name="concepto" aria-describedby="concepto" placeholder="Concepto" maxlength="50" rows="3" required></textarea>
+        <form class="main-section_form">
+          <div class="main-section_form-label" >
+            <label for="nombre" class="form-label">
+              <%= result[0].usuario_nombre %>
             </label>
           </div>
           <div class="content main-section_form_button">
-            <button type="submit" class="btn btngenerar" tabindex="5">Generar</button>
+            <a type="button" class="btn btnsolicitar" href="/" tabindex="5">Solicitar</a>
           </div>
         </form>
       </section>
+
+      <aside class="main-asaid">
+        <table class="main-section_table table table-hover table-bordered table-striped mt-4">
+          <thead>
+            <tr>
+              <th scope="col">Prefijo</th>
+              <th scope="col">Consecutivo</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% result.forEach((row) => { %>
+            <tr>
+              <td><%= row.prefijo %></td>
+              <td><%= row.consecutivo %></td>
+              <td><%= row.descripcion %></td>
+              <td><%= row.fecha%></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </aside>
     </main>
-  </body>
-
-  <!-- javascripts-->
-  <script src="/JS/jquery-3.6.3.min.js"></script>
-  <script src="/dist/js/bootstrap.min.js"></script>
-  <script src="/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="./main.js"></script>
-
+  
+</body>
 </html>

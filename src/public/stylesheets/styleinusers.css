@@ -1,0 +1,76 @@
+.main{
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-section_form{
+  width: auto;
+  height: auto;
+  padding: 1.5rem;
+  border: 1px solid #000000;
+  border-radius: 2rem;
+  box-shadow: -10px 10px 3px rgba(8,34,86,0.5);
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;  
+}
+
+.main-section_form-label{
+  padding: 2rem;
+}
+
+.form-label{
+  text-align: center;
+  font-size: medium;
+  display: flex;
+  justify-content: center;
+}
+
+.form-control:hover{
+  box-shadow: 5px 5px rgba(215,225,242,0.8);  
+}
+
+.main-section_form_text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-section_table {
+  margin: 2rem;
+  padding-top: 2rem;
+  font-size: small;
+}
+
+.main-section_table th{
+  font-size: 20px;
+  font-family: 'FuenteLocal', sans-serif;
+  text-align: center;
+}
+
+.main-section_table tbody{
+  box-shadow: 10px 10px 3px rgba(8,34,86,0.5);
+}
+
+.main-section_form_button{
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btnsolicitar{
+  padding: 2rem;
+  font-size: large;
+  font-family: 'Cabin', sans-serif;
+  border-radius: 2rem;
+  background-color: rgba(215,225,242,0.8);
+  transition: all 0.5s ease;
+}
+
+.btnsolicitar:hover{
+  background-color: rgba(0,159,227,1);
+  color: #ffff !important;
+  box-shadow: 5px 5px 3px rgba(215,225,242,0.8);
+}

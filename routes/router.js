@@ -9,7 +9,6 @@ function routerApp (app){
   app.use('/login', loginRouter);
   app.use('/list', consecRouter);
   app.use('/users', usersRouter);
-  app.use('/server', server);
 }
 
 module.exports = routerApp;

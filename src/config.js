@@ -16,6 +16,7 @@ export const adConectConfig = {
   baseDN: process.env.baseDNC,
   username: process.env.usernameC,
   password: process.env.passwordC,
+  dominio: process.env.dominioC
 };
 
 

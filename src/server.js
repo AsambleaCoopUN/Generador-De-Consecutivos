@@ -1,23 +1,34 @@
 const ActiveDirectory = require('activedirectory');
-
+const config = require('./config');
+ 
 const adConect = {
-  url: 'ldap://192.168.0.65',
-  baseDN:'DC=cooprofesoresun,DC=coop',
-  username: 'glpi',
-  password: 'Cooprofesores2023$',
+  url: config.adConectConfig.url,
+  baseDN: config.adConectConfig.baseDN,
+  username: config.adConectConfig.username,
+  password: config.adConectConfig.password,
+  dominio: config.adConectConfig.dominio
 };
 
-/* Verifica las credenciales del usuario en el Directorio Activo */
-const ad = new ActiveDirectory(adConfig);
-ad.authenticate(username, password, (error, auth) => {
-  if (error) {
-    console.log(error);
-  }
+function validacionldap(userldap, userpassldap, callback) {
+  let usercomplete = (userldap) + (adConect.dominio);
+  const ad = new ActiveDirectory(adConect);
+  
+  return new Promise((resolve, reject) => {
+    ad.authenticate(usercomplete, userpassldap, function(error, auth) {
+      if (error) {
+        console.log('ERROR: ' + JSON.stringify(error));
+        resolve(false);
+      }
+      if (auth) {
+        resolve(true);
+      } else {
+        resolve(false);
+      }
+    });
+  });
+};
 
-  if (!auth) {
-    console.log("usuario o contraseña invalidos");
-  } else {
-    console.log("datos validados satisfactoriamente");
-  }
-});
+module.exports = {
+  validacionldap
+};
 

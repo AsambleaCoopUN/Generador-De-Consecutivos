@@ -1,6 +1,5 @@
 const { Pool } = require('pg');
 const config  = require('./config');
-const conectionData2 =require('./config');
 
 const conectionData = config.conectionData2; // se recibe el arreglo y se configra para realizar el pool de conexiones 
 
@@ -10,7 +9,8 @@ const pool = new Pool({
   password: conectionData.password,
   host: conectionData.host,
   port: conectionData.port,
-  database: conectionData.database
+  database: conectionData.database,
+  max: 10,
 });
 
 module.exports = pool;

@@ -22,17 +22,14 @@
   justify-content: flex-start;
 }
 
-.form-label{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
+.form_lable{
+  font-size: 2rem;
 }
 
 .form_lable_select{
+  padding: 1rem;
   font-size: small;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .main-section_form_inpbox{

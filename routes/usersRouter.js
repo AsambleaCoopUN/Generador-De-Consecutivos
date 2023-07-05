@@ -44,14 +44,25 @@ router.post('/', async (req, res) => {
         } else {
           console.log(error1);
           message = 'Usuario no encontrado';
-          res.send(`<script>
-                      if (confirm('${message}')) {
-                        window.location.href='/login';
+          res.send(`<head>
+                    <link rel="stylesheet" href="../stylesheets/styles.css" >
+                    </head>
+                    <div class="confirmacion-container">
+                      <h1 class="confirmacion-title">${message}</h1>
+                      <button class="confirmacion-button" onclick="redirectToLogin(true)">Aceptar</button>
+                      <button class="confirmacion-button confirmacion-button-cancel" onclick="redirectToLogin(false)">Cancelar</button>
+                    </div>
+                    <script>
+                    function redirectToLogin(confirm) {
+                      if (confirm) {
+                        window.location.href = '/login';
                       } else {
-                        window.location.href='/login';
+                        window.location.href = '/login';
                       }
-                    </script>`);
-        }
+                    }
+                    </script>`
+                  );
+          }
 
         pool.query(history, (error2, result) => {
           if (!error2) {
@@ -59,24 +70,46 @@ router.post('/', async (req, res) => {
               res.render('users', { resultUser: resultUser.rows, result: result.rows });
             } else {
               message = 'Datos no encontrado';
-              res.send(`<script>
-                          if (confirm('${message}')) {
-                            window.location.href='/login';
+              res.send(`<head>
+                        <link rel="stylesheet" href="../stylesheets/styles.css" >
+                        </head>
+                        <div class="confirmacion-container">
+                          <h1 class="confirmacion-title">${message}</h1>
+                          <button class="confirmacion-button" onclick="redirectToLogin(true)">Aceptar</button>
+                          <button class="confirmacion-button confirmacion-button-cancel" onclick="redirectToLogin(false)">Cancelar</button>
+                        </div>
+                        <script>
+                        function redirectToLogin(confirm) {
+                          if (confirm) {
+                            window.location.href = '/login';
                           } else {
-                            window.location.href='/login';
+                            window.location.href = '/login';
                           }
-                        </script>`);
+                        }
+                        </script>`
+                  );
             }
           } else {
             console.log(error2);
             message = 'Datos no encontrado';
-            res.send(`<script>
-                        if (confirm('${message}')) {
-                          window.location.href='/login';
+            res.send(`<head>
+                      <link rel="stylesheet" href="../stylesheets/styles.css" >
+                      </head>
+                      <div class="confirmacion-container">
+                        <h1 class="confirmacion-title">${message}</h1>
+                        <button class="confirmacion-button" onclick="redirectToLogin(true)">Aceptar</button>
+                        <button class="confirmacion-button confirmacion-button-cancel" onclick="redirectToLogin(false)">Cancelar</button>
+                      </div>
+                      <script>
+                      function redirectToLogin(confirm) {
+                        if (confirm) {
+                          window.location.href = '/login';
                         } else {
-                          window.location.href='/login';
+                          window.location.href = '/login';
                         }
-                      </script>`);
+                      }
+                      </script>`
+            );
           }
         });
       });

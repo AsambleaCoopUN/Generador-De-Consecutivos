@@ -1,8 +1,10 @@
 import express from 'express';
 import path from 'path';
 const routerApp = require('../routes/router');
-const app = express();
+import cookieParser from 'cookie-parser';
 
+const app = express();
+app.use(cookieParser());
 /* establecer las carpetas estáticas */
 app.use(express.static(path.join(__dirname, '../node_modules/bootstrap/')));
 app.use(express.static(path.join(__dirname, '../node_modules/jquery/')));

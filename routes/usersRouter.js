@@ -6,6 +6,7 @@ const { render } = require('ejs');
 
 let userldap;
 let userpassldap;
+let cookie;
 let idUser;
 let message;
 let history;
@@ -13,11 +14,12 @@ let history;
 router.post('/', async (req, res) => {
   userldap = req.body.userldap;
   userpassldap = req.body.pass
-
+  cookie = req.cookies.usercookie
   try {
-    const isAuthenticated = await validacionldap(userldap, userpassldap);
+    const isAuthenticated = await validacionldap(userldap, userpassldap, cookie);
     if (isAuthenticated) {
       console.log("Datos validados satisfactoriamente");
+      res.cookie('usercookie', userldap);
       const user = `SELECT u.usuario_nombre, u.usuario_id
                     FROM consecutivo.usuario u
                     WHERE u.usuario_ldap = '${userldap}'`;

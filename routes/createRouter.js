@@ -37,13 +37,10 @@ router.post('/', (req, res) => {
                     <div class="confirmacion-container">
                       <h1 class="confirmacion-title">${message}</h1>
                       <button class="confirmacion-button" onclick="redirectToLogin(true)">Aceptar</button>
-                      <button class="confirmacion-button confirmacion-button-cancel" onclick="redirectToLogin(false)">Cancelar</button>
                     </div>
                     <script>
                     function redirectToLogin(confirm) {
                       if (confirm) {
-                        window.location.href = '/login';
-                      } else {
                         window.location.href = '/login';
                       }
                     }

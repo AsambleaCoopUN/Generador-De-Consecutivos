@@ -2,7 +2,7 @@ const ActiveDirectory = require('activedirectory');
 const config = require('./config');
 const express = require('express');
 const router = express.Router();
-
+let message;
 const adConect = {
   url: config.adConectConfig.url,
   baseDN: config.adConectConfig.baseDN,
@@ -32,12 +32,19 @@ router.post('/', async (req, res) => {
         });
         res.redirect('/users');
       } else {
-        console.log('Autenticación fallida');
-        res.redirect('/login');
+        message = 'Autenticación fallida';
+        res.send(`<script>
+                  alert('"${message}"');
+                  window.location.href = '/';
+              </script>`);
       }
     } catch (error) {
       console.log('ERROR: ' + JSON.stringify(error));
-      res.redirect('/login');
+      message = 'Usuario o contraseña incorrecta';
+      res.send(`<script>
+                  alert('"${message}"');
+                  window.location.href = '/';
+              </script>`);
     }
   }
 });

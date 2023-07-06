@@ -6,8 +6,8 @@ const server = require('../src/server');
 const createRouter = require('./createRouter');
 
 function routerApp (app){
-  app.use('/', mainRouter);
-  app.use('/login', loginRouter);
+  app.use('/', loginRouter);
+  app.use('/index', mainRouter);
   app.use('/list', consecRouter);
   app.use('/users', usersRouter);
   app.use('/create', createRouter);

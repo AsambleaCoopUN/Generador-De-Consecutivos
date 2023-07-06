@@ -10,7 +10,7 @@ let history;
 router.get('/', (req, res) => {
 
   if (!req.cookies.usercookie) {
-    res.render('login');
+    res.render('/');
   } else {
    userldap = req.cookies.usercookie;
     const user = `SELECT u.usuario_nombre, u.usuario_id FROM consecutivo.usuario u WHERE u.usuario_ldap = '${userldap}'`;    
@@ -24,7 +24,13 @@ router.get('/', (req, res) => {
     pool.query(user, (error1, resultUser) => {
       if (!error1) {
         idUser = resultUser.rows[0].usuario_id;
-        history = `SELECT p.prefijo, hc.consecutivo, hc.descripcion, CAST(hc.fecha_generacion AS VARCHAR(16)) AS fecha FROM consecutivo.usuario u, consecutivo.prefijo p, consecutivo.historia_consecutivo hc WHERE hc.prefijo_id = p.prefijo_id AND hc.usuario_id = u.usuario_id AND u.usuario_id = '${idUser}' ORDER BY fecha_generacion DESC`;
+        history = `select p.prefijo, p.descripcion_prefijo , hc.consecutivo, hc.descripcion, 
+        cast (hc.fecha_generacion as VARCHAR(16)) 
+        as fecha 
+        from consecutivo.usuario u,consecutivo.prefijo p,consecutivo.historia_consecutivo hc
+        where hc.prefijo_id = p.prefijo_id  and hc.usuario_id = u.usuario_id
+        and u.usuario_id = '${idUser}'
+        order by fecha_generacion desc`;
       } else {
         console.log(error1);
         message = 'Usuario no encontrado';
@@ -34,14 +40,13 @@ router.get('/', (req, res) => {
                     <div class="confirmacion-container">
                       <h1 class="confirmacion-title">${message}</h1>
                       <button class="confirmacion-button" onclick="redirectToLogin(true)">Aceptar</button>
-                      <button class="confirmacion-button confirmacion-button-cancel" onclick="redirectToLogin(false)">Cancelar</button>
                     </div>
                     <script>
                     function redirectToLogin(confirm) {
                       if (confirm) {
-                        window.location.href = '/login';
+                        window.location.href = '/';
                       } else {
-                        window.location.href = '/login';
+                        window.location.href = '/';
                       }
                     }
                     </script>`
@@ -60,14 +65,13 @@ router.get('/', (req, res) => {
                         <div class="confirmacion-container">
                           <h1 class="confirmacion-title">${message}</h1>
                           <button class="confirmacion-button" onclick="redirectToLogin(true)">Aceptar</button>
-                          <button class="confirmacion-button confirmacion-button-cancel" onclick="redirectToLogin(false)">Cancelar</button>
                         </div>
                         <script>
                         function redirectToLogin(confirm) {
                           if (confirm) {
-                            window.location.href = '/login';
+                            window.location.href = '/';
                           } else {
-                            window.location.href = '/login';
+                            window.location.href = '/';
                           }
                         }
                         </script>`
@@ -82,14 +86,13 @@ router.get('/', (req, res) => {
                       <div class="confirmacion-container">
                         <h1 class="confirmacion-title">${message}</h1>
                         <button class="confirmacion-button" onclick="redirectToLogin(true)">Aceptar</button>
-                        <button class="confirmacion-button confirmacion-button-cancel" onclick="redirectToLogin(false)">Cancelar</button>
                       </div>
                       <script>
                       function redirectToLogin(confirm) {
                         if (confirm) {
-                          window.location.href = '/login';
+                          window.location.href = '/';
                         } else {
-                          window.location.href = '/login';
+                          window.location.href = '/';
                         }
                       }
                       </script>`

@@ -15,7 +15,7 @@ router.get('/', (req,res)=> {
       res.render('list', {result:result.rows});
     } catch (error) {
       console.log(error);
-      res.render('index');
+      res.render('/index');
     };
   });
 });

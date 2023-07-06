@@ -41,7 +41,9 @@ router.post('/', (req, res) => {
                     <script>
                     function redirectToLogin(confirm) {
                       if (confirm) {
-                        window.location.href = '/login';
+                        window.location.href = '/users';
+                      } else {
+                        window.location.href = '/users';
                       }
                     }
                     </script>`

@@ -11,6 +11,7 @@ function routerApp (app){
   app.use('/list', consecRouter);
   app.use('/users', usersRouter);
   app.use('/create', createRouter);
+  app.use('/server', server);
 }
 
 module.exports = routerApp;

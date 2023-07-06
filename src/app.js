@@ -16,7 +16,12 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 /* EJS como motor de plantillas*/
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
+
+app.get('/logout', (req, res) => {
+  res.clearCookie('usercookie')
+  res.render('login');
+});
 
 
 /* llamado del enrrutador */

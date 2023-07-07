@@ -27,8 +27,8 @@ router.post('/', async (req, res) => {
       if (auth) {
         res.cookie('usercookie', userldap, {
           maxAge: 1000 * 60 * 60,
-          httpOnly: true,
-          secure:true,
+          /* httpOnly: true,
+          secure:true, */
         });
         res.redirect('/users');
       } else {

@@ -10,7 +10,7 @@ let history;
 router.get('/', (req, res) => {
 
   if (!req.cookies.usercookie) {
-    res.render('/');
+    res.render('login');
   } else {
    userldap = req.cookies.usercookie;
     const user = `SELECT u.usuario_nombre, u.usuario_id FROM consecutivo.usuario u WHERE u.usuario_ldap = '${userldap}'`;    

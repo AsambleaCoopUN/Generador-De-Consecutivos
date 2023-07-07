@@ -1,5 +1,5 @@
 const ActiveDirectory = require('activedirectory');
-const config = require('./config');
+const config = require('../src/config');
 const express = require('express');
 const router = express.Router();
 let message;

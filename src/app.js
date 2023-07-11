@@ -1,7 +1,7 @@
-import express from 'express';
-import path from 'path';
+const express = require ('express');
+const path = require ('path');
 const routerApp = require('../routes/router');
-import cookieParser from 'cookie-parser';
+const cookieParser = require ('cookie-parser');
 
 const app = express();
 app.use(cookieParser());
@@ -27,4 +27,4 @@ app.get('/logout', (req, res) => {
 /* llamado del enrrutador */
 routerApp(app);
 
-export default app;
+module.exports = app;

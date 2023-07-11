@@ -1,9 +1,9 @@
-import { config } from 'dotenv';
+const { config } = require ('dotenv');
 require('dotenv').config(); // Cargar las variables de entorno desde el archivo .env
 
 config();
 // se asignan los datos de las variables de entorno a un arreglo para enviar a la conecion 
-export const conectionData2 = {
+const conectionData2 = {
   user: process.env.userC,
   password: process.env.passwordC,
   host: process.env.hostC,
@@ -11,7 +11,7 @@ export const conectionData2 = {
   database: process.env.databaseC
 };
 
-export const adConectConfig = {
+const adConectConfig = {
   url: process.env.urlC,
   baseDN: process.env.baseDNC,
   username: process.env.usernameC,
@@ -19,6 +19,11 @@ export const adConectConfig = {
   dominio: process.env.dominioC
 };
 
+const PORT = process.env.PORT || 8100;
 
-export const PORT = process.env.PORT || 8100;
+module.exports = {
+  conectionData2,
+  adConectConfig,
+  PORT
+};
 

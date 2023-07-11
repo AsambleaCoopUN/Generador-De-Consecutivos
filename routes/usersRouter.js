@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
       if (resultUser.rows && resultUser.rows.length > 0 && resultUser.rows[0].usuario_id !== "") {
         if (!error1) {
           idUser = resultUser.rows[0].usuario_id;
-          /* console.log(idUser); */
+
           history = `select p.prefijo, p.descripcion_prefijo , hc.consecutivo, hc.descripcion, 
           cast (hc.fecha_generacion as VARCHAR(16)) 
           as fecha 
@@ -62,61 +62,37 @@ router.get('/', (req, res) => {
                 res.render('users', { resultUser: resultUser.rows, result: result.rows });
             } else {
               message = 'Datos no encontrado';
-              res.send(`<head>
-                          <link rel="stylesheet" href="../stylesheets/styles.css" >
-                          </head>
-                          <div class="confirmacion-container">
-                            <h1 class="confirmacion-title">${message}</h1>
-                            <button class="confirmacion-button"       
-                            onclick="redirectToLogin(true)">Aceptar</button>
-                          </div>
-                          <script>
-                          function redirectToLogin(confirm) {
-                            if (confirm) {
-                              window.location.href = '/';
-                            } else {
-                              window.location.href = '/';
-                            }
-                          }
-                          </script>`
-              );
+              res.send(`<script>
+                          alert('"${message}"');
+                          window.location.href = '/';
+                        </script>`);
             }
           } else {
             console.log(error2);
             message = 'Datos no encontrado';
-            res.send(`<head>
-                        <link rel="stylesheet" href="../stylesheets/styles.css" >
-                        </head>
-                        <div class="confirmacion-container">
-                          <h1 class="confirmacion-title">${message}</h1>
-                          <button class="confirmacion-button" onclick="redirectToLogin(true)">Aceptar</button>
-                        </div>
-                        <script>
-                        function redirectToLogin(confirm) {
-                          if (confirm) {
-                            window.location.href = '/';
-                          } else {
-                            window.location.href = '/';
-                          }
-                        }
-                        </script>`
-            );
+            res.send(`<script>
+                        alert('"${message}"');
+                        window.location.href = '/';
+                      </script>`);
           }
         });
     }else{
-      const create = `insert into consecutivo.usuario (usuario_ldap)
-      values ('${userldap}')`;
+      const create = `insert into consecutivo.usuario (usuario_nombre, usuario_ldap)
+      select 'sin usuario','${userldap}'
+      from consecutivo.usuario
+      where (select count(*) from consecutivo.usuario where usuario_ldap = '${userldap}') = 0
+      limit 1;`;
       pool.query(create, (error, result) => {
         try{
         console.log("usuario creado");
         message = 'Comuniquese con el administrador para habilitar su usuario en la plataforma';
         res.send(`<script>
-                  alert('"${message}"');
-                  window.location.href = '/';
-              </script>`);
+                    alert('"${message}"');
+                    window.location.href = '/';
+                  </script>`);
         }catch(error){
           console.log(error);
-          res.render(login);
+          res.render('login');
         }
       });
     }

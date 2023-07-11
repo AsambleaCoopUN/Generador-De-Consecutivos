@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
       const auth = await authenticateAD(ad, usercomplete, userpassldap);
       if (auth) {
         res.cookie('usercookie', userldap, {
-          maxAge: 1000 * 60 * 60,
+          maxAge: 1000 * 60 * 20,
           /* httpOnly: true,
           secure:true, */
         });

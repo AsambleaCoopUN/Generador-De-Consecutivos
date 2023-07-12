@@ -54,7 +54,7 @@
         <form class="main-section_form" action="/server" method="post">
           <div class="main-section_form_inpbox" >
             <label for="user" class="form-label">Usuario
-              <input type="text" class="form-control" id="userldap" name="userldap" aria-describedby="user" placeholder="Usuario" maxlength="20" required>
+              <input type="text" class="form-control" id="userldap" name="userldap" aria-describedby="user" placeholder="Usuario" maxlength="20" required oninput="this.value = this.value.toLowerCase()">
             </label>
           </div>
           <div class="main-section_form_inpbox" >
@@ -71,7 +71,7 @@
   </body>
 
   <!-- javascripts-->
-  <script src="/JS/jquery-3.6.3.min.js"></script>
+  <script src="/dist/js/jquery-3.6.3.min.js"></script>
   <script src="/dist/js/bootstrap.min.js"></script>
   <script src="/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>

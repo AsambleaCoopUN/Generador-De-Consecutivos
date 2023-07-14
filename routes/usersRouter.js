@@ -79,15 +79,14 @@ router.get('/', (req, res) => {
           }
         } else {
           const create = `INSERT INTO consecutivo.usuario (usuario_nombre, usuario_ldap)
-            SELECT 'sin usuario', '${userldap}'
+            SELECT '${req.cookies.namecookie}', '${userldap}'
             FROM consecutivo.usuario
             WHERE (SELECT COUNT(*) FROM consecutivo.usuario WHERE usuario_ldap = '${userldap}') = 0
             LIMIT 1;`;
           
           pool.query(create, (error, result) => {
             try {
-              console.log("usuario creado");
-              message = 'Comuníquese con el administrador para habilitar su usuario en la plataforma';
+              message = 'Usuario creado por primer acceso, intente ingresar nuevamente';
               res.send(`<script>
                           alert("${message}");
                           window.location.href = '/';

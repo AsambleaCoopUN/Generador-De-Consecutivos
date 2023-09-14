@@ -56,17 +56,27 @@
           <table class="main-section_table table table-hover mt-4">
             <thead>
               <tr>
-                <th scope="col">Consecutivo</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Fecha</th>
+                <!-- <th scope="col">ID</th> -->
+                <th scope="col" rowspan="2">Nombre Usuario</th>
+                <th scope="col" colspan="4">Permisos</th> 
+              </tr>
+              <tr>
+                <th>Administrador</th>
+                <th>Estandar</th>
+                <th>Revisor</th>
+                <th>Comercial</th>
               </tr>
             </thead>
             <tbody>
-              <% result.forEach((row) => { %>
+              <% userResult.forEach((row) => { %>
+                <tr></tr>
               <tr>
-                <td><%= row.consecutivo %></td>
-                <td><%= row.descripcion %></td>
-                <td><%= row.fecha_generacion%></td>
+                <!-- <td><%= //row.usuario_id %></td> -->
+                <td><%= row.usuario_nombre %></td>
+                <td><input type="checkbox" name="option" id="1">1<%=// row.usuario_nombre %></td>
+                <td><input type="checkbox" name="option" id="2">2<%=// row.usuario_nombre %></td>
+                <td><input type="checkbox" name="option" id="3">3<%=// row.usuario_nombre %></td>
+                <td><input type="checkbox" name="option" id="4">4<%=// row.usuario_nombre %></td>
               </tr>
               <% }); %>
             </tbody>

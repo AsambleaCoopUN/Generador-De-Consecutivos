@@ -10,7 +10,9 @@ router.get('/', (req, res) => {
 
     console.log('Conexión exitosa a la base de datos');
 
-    pool.query('SELECT * FROM consecutivo.historia_consecutivo', (error, result) => {
+    pool.query(`select hc.usuario_id, hc.consecutivo, hc.descripcion, 
+    cast (hc.fecha_generacion as VARCHAR(16)) 
+    as fecha from consecutivo.historia_consecutivo hc`, (error, result) => {
       release(); // Liberar el cliente después de usarlo
 
       try {

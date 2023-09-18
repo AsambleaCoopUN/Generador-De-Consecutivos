@@ -1,20 +1,12 @@
 .main-section{
   margin: 2rem;
-  }
+  align-content: center;
+}
 
-.main-section_table{
-  width: 10%;
+.main-section_table {
   margin: 2rem;
   padding-top: 2rem;
   font-size: small;
-}
-
-.main-section_table th{
-  font-size: 18px;
-  font-family: 'FuenteLocal', sans-serif;
-  text-align: center;
-  background-color: rgba(13,23,53,0.8);
-  color: #ffff !important;
   vertical-align: middle;
 }
 
@@ -35,4 +27,19 @@
 
 .main-section_table tbody{
   box-shadow: 10px 10px 3px rgba(8,34,86,0.5);
+}
+
+.btnasignar{
+  padding: 0.8rem 0.8rem;
+  font-size: medium;
+  font-family: 'Cabin', sans-serif;
+  border-radius: 2rem;
+  background-color: rgba(0,159,227,0.8);
+  transition: all 0.5s ease;
+}
+
+.btnasignar:hover{
+  background-color: rgba(8,34,86,0.8);
+  color: #ffff !important;
+  box-shadow: 5px 5px rgba(0,159,227,0.8);
 }

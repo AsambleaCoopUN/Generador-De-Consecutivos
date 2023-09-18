@@ -19,11 +19,18 @@ const adConectConfig = {
   dominio: process.env.dominioC
 };
 
-const PORT = process.env.PORT || 8100;
+const conectLinix = {
+  user: process.env.userLinix,
+  password: process.env.passwordLinix,
+  connectString: process.env.conectLinix
+};
+
+const PORT = process.env.PORT || 3000;
 
 module.exports = {
   conectionData2,
   adConectConfig,
+  conectLinix,
   PORT
 };
 

@@ -52,18 +52,11 @@
       <section class="main-section">
         <form class="main-section_form" action="/create" method="post">
             <label class="form_lable" for="prefijo">Dependencias
-                <select class="form_lable_select" name="prefijo" id="prefijo">
-                    <option value="7">GERENCIA/SUBGERENCIA</option>
-                    <option value="5">DIRECCIÓN ADMINISTRATIVA</option>
-                    <option value="6">DIRECCIÓN COMERCIAL</option>
-                    <option value="4">DIRECCIÓN FINANCIERA</option>
-                    <option value="1">DIRECCIÓN TICS</option>
-                    <option value="3">CONTROL INTERNO</option>
-                    <option value="2">COORDINACION RIESGOS</option>
-                    <option value="8">AREA JURÍDICA</option>
-                    <option value="9">JUNTA DE VIGILANCIA</option>
-                    <option value="10">CONSEJO DE ADMINISTRACIÓN</option>
-                </select>
+              <select class="form_lable_select" name="prefijo" id="prefijo">
+                <% rPrefijo.forEach((prefijo) => { %>
+                  <option value="<%= prefijo.prefijo_id %>"><%= prefijo.nombre %></option>
+                <% }); %>
+              </select>
                 <input type="hidden" id="idUser" name="idUser" value="<%= idUser%>">
             </label>
             <div class="main-section_form_text">

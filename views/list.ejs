@@ -51,26 +51,26 @@
       </nav>
     </header>
 
-    <main clas="main">
+    <main class="main">
       <section class="main-section">
         <table class="main-section_table table table-hover mt-4">
-          <thead>
-            <tr>
-              <th scope="col" class="col-sm-4">Fecha</th>
-              <th scope="col" class="col-sm-2">Consecutivo</th>
-              <th scope="col" class="col-sm-6">Descripción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% result.forEach((row) => { %>
-            <tr>
-              <td><%= row.fecha%></td>
-              <td><%= row.consecutivo %></td>
-              <td class="td-justyfy"><%= row.descripcion %></td>
-            </tr>
-            <% }); %>
-          </tbody>
-        </table>
+            <thead>
+              <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Consecutivo</th>
+                <th scope="col">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%result.forEach((row)=>{ %>
+                <tr>
+                  <td><%= row.fecha %></td>
+                  <td><%= row.consecutivo %></td>
+                  <td class="td-justyfy"><%= row.descripcion %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
       </section>
     </main>
   </body>

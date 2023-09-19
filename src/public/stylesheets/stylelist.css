@@ -1,9 +1,9 @@
 .main-section{
   margin: 2rem;
-  }
+  align-content: center;
+}
 
-.main-section_table{
-  width: 10%;
+.main-section_table {
   margin: 2rem;
   padding-top: 2rem;
   font-size: small;
@@ -15,22 +15,18 @@
   text-align: center;
   background-color: rgba(13,23,53,0.8);
   color: #ffff !important;
-  vertical-align: middle;
-}
-
-.main-section_table th{
-  font-size: 18px;
-  font-family: 'FuenteLocal', sans-serif;
-  text-align: center;
-  background-color: rgba(13,23,53,0.8);
-  color: #ffff !important;
-  border: none;
-  vertical-align: middle;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .main-section_table td{
+  max-width: 200px;
+  word-wrap: break-word;
   text-align: center;
   background-color: #ffff;
+}
+
+.main-section_table .td-justyfy{
+  text-align: left;
 }
 
 .main-section_table tbody{

@@ -8,8 +8,6 @@ router.get('/', (req, res) => {
       return console.error('Error adquiriendo el cliente', err.stack);
     }
 
-    console.log('Conexión exitosa a la base de datos');
-
     pool.query(`select hc.usuario_id, hc.consecutivo, hc.descripcion, 
     cast (hc.fecha_generacion as VARCHAR(16)) 
     as fecha from consecutivo.historia_consecutivo hc`, (error, result) => {

@@ -8,8 +8,6 @@ router.get('/', (req, res) => {
       return console.error('Error adquiriendo el cliente', err.stack);
     }
 
-    console.log('Conexión exitosa a la base de datos');
-
     pool.query('select * from consecutivo.usuario order by usuario_id asc', (error, userResult) => {
       release(); // Liberar el cliente después de usarlo
 

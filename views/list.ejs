@@ -52,21 +52,33 @@
     </header>
 
     <main class="main">
+      <select class="form_lable_select" name="prefijo" id="prefijo">
+        <% result.forEach((row) => { %>
+          <option value="<%= row.usuario_id %>"><%= row.usuario_nombre %></option>
+        <% }); %>
+      </select>
+
       <section class="main-section">
         <table class="main-section_table table table-hover mt-4">
             <thead>
               <tr>
-                <th scope="col">Fecha</th>
-                <th scope="col">Consecutivo</th>
+                <th scope="col" class="col-sm-2">Fecha</th>
+                <th scope="col" class="col-sm-2">Consecutivo</th>
+                <th scope="col" class="col-sm-1">Prefijo</th>
+                <th scope="col">Dependencia</th>
                 <th scope="col">Descripción</th>
+                <th scope="col">Solicitante</th>
               </tr>
             </thead>
             <tbody>
               <%result.forEach((row)=>{ %>
                 <tr>
-                  <td><%= row.fecha %></td>
+                  <td><%= row.fecha%></td>
                   <td><%= row.consecutivo %></td>
+                  <td><%= row.prefijo %></td>
+                  <td class="td-justyfy"><%= row.descripcion_prefijo %></td>
                   <td class="td-justyfy"><%= row.descripcion %></td>
+                  <td class="td-justyfy"><%= row.usuario_nombre %></td>
                 </tr>
               <% }); %>
             </tbody>

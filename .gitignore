@@ -211,10 +211,11 @@ $RECYCLE.BIN/
 *.msix
 *.msm
 *.msp
+*.csv
 
 # Windows shortcuts
 *.lnk
-
+*.csv
 #conexion a la base
 ./conexion/conexion.js
 

@@ -23,8 +23,10 @@ router.post('/', (req, res) => {
       pool.query(insert, (error, result) => {
         if (result) {
           const resultado = `SELECT MAX(hc.consecutivo) AS consecutivo 
-            FROM consecutivo.historia_consecutivo hc
-            WHERE hc.usuario_id = '${idUser}' AND hc.prefijo_id = '${idPrefijo}'`;
+          FROM consecutivo.historia_consecutivo hc
+          WHERE hc.usuario_id = '${idUser}' 
+            AND hc.prefijo_id = '${idPrefijo}'
+            AND EXTRACT(YEAR FROM hc.fecha_generacion) = EXTRACT(YEAR FROM CURRENT_DATE);`;
 
           try {
             pool.query(resultado, (error, result) => {

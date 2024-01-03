@@ -52,21 +52,16 @@
       <section class="main-section">
         <form class="main-section_form" action="/create" method="post">
             <label class="form_lable" for="prefijo">Dependencias
-                <select class="form_lable_select" name="prefijo" id="prefijo">
-                    <option value="7">Gerencia / Subgerencia</option>
-                    <option value="5">Direccion Administrativa</option>
-                    <option value="6">Direccion Comercial</option>
-                    <option value="4">Direccion Financiera</option>
-                    <option value="1">Direccion Tics</option>
-                    <option value="3">Direccion Control Interno</option>
-                    <option value="2">Coordinacion Riesgos</option>
-                    <option value="8">Juridica</option>
-                </select>
+              <select class="form_lable_select" name="prefijo" id="prefijo">
+                <% rPrefijo.forEach((prefijo) => { %>
+                  <option value="<%= prefijo.prefijo_id %>"><%= prefijo.nombre %></option>
+                <% }); %>
+              </select>
                 <input type="hidden" id="idUser" name="idUser" value="<%= idUser%>">
             </label>
             <div class="main-section_form_text">
                 <label for="concepto" class="form-label">
-                    <textarea class="form-control" id="concepto" name="concepto" aria-describedby="concepto" placeholder="Concepto" maxlength="128" rows="3" required></textarea>
+                    <textarea class="form-control" id="concepto" name="concepto" aria-describedby="concepto" placeholder="Concepto" maxlength="128" rows="3" required oninput="this.value = this.value.toUpperCase()"></textarea>
                 </label>
             </div>
             <div class="content main-section_form_button">

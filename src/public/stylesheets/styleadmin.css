@@ -7,6 +7,7 @@
   margin: 2rem;
   padding-top: 2rem;
   font-size: small;
+  vertical-align: middle;
 }
 
 .main-section_table th{
@@ -15,20 +16,30 @@
   text-align: center;
   background-color: rgba(13,23,53,0.8);
   color: #ffff !important;
-  border-radius: 1rem 1rem 0 0;
+  border: none;
+  vertical-align: middle;
 }
 
 .main-section_table td{
-  max-width: 150px;
-  word-wrap: break-word;
   text-align: center;
   background-color: #ffff;
 }
 
-.main-section_table .td-justyfy{
-  text-align: left;
-}
-
 .main-section_table tbody{
   box-shadow: 10px 10px 3px rgba(8,34,86,0.5);
+}
+
+.btnasignar{
+  padding: 0.8rem 0.8rem;
+  font-size: medium;
+  font-family: 'Cabin', sans-serif;
+  border-radius: 2rem;
+  background-color: rgba(0,159,227,0.8);
+  transition: all 0.5s ease;
+}
+
+.btnasignar:hover{
+  background-color: rgba(8,34,86,0.8);
+  color: #ffff !important;
+  box-shadow: 5px 5px rgba(0,159,227,0.8);
 }

@@ -3,6 +3,7 @@ const router = express.Router();
 const pool = require('../src/db');
 
 let name;
+let prefijo;
 let message;
 
 router.post('/', (req, res) => {
@@ -15,8 +16,10 @@ router.post('/', (req, res) => {
     }
 
     name = `SELECT u.usuario_nombre FROM consecutivo.usuario u WHERE usuario_id = '${idUser}';`;
+    prefijo = `select prefijo_id, p.descripcion_prefijo
+    as nombre from consecutivo.prefijo p order by prefijo_id`;
 
-    pool.query(name, (error2, result) => {
+    pool.query(name, (error, result) => {
       release(); // Liberar el cliente después de usarlo
 
       if (result.rows[0].usuario_nombre === 'sin usuario') {
@@ -27,7 +30,17 @@ router.post('/', (req, res) => {
                     window.location.href = '/logout';
                   </script>`);
       } else {
-        res.render('index', { idUser: idUser });
+        pool.query(prefijo, (error2, rPrefijo) => {
+          try{
+            res.render('index', { idUser: idUser, rPrefijo:rPrefijo.rows });
+          }catch (error2){
+            message = 'Error de comunicaicón con la base de datos';
+            res.send(`<script>
+                    alert("${message}");
+                    window.location.href = '/logout';
+                  </script>`);
+          }
+        });        
       }
     });
   });
